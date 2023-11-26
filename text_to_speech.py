@@ -3,10 +3,10 @@ import json
 import inquirer
 import os
 
-# 从配置文件读取API密钥
+# 从配置文件读取API-KEY和API-BASE
 def load_config():
     if not os.path.exists("config.json"):
-        return {"api_key": ""}
+        return {"api_key": "", "api_base": ""}
     with open("config.json", "r") as file:
         return json.load(file)
 
@@ -21,31 +21,43 @@ def tts_request(text, model, voice, filename, format):
     # 文件保存路径
     file_path = os.path.join(output_dir, f"{filename}.{format}")
 
-    conn = http.client.HTTPSConnection("api.chatanywhere.com.cn")
-    payload = json.dumps({
-        "model": model,
-        "input": text,
-        "voice": voice,
-        "format": format
-    })
-    headers = {
-        'Authorization': f'Bearer {config["api_key"]}',
-        'Content-Type': 'application/json'
-    }
+    try:
+        conn = http.client.HTTPSConnection(config["api_base"])
+        payload = json.dumps({
+            "model": model,
+            "input": text,
+            "voice": voice,
+            "format": format
+        })
+        headers = {
+            'Authorization': f'Bearer {config["api_key"]}',
+            'Content-Type': 'application/json'
+        }
 
-    conn.request("POST", "/audio/speech", payload, headers)
-    res = conn.getresponse()
-    data = res.read()
+        conn.request("POST", "/v1/audio/speech", payload, headers)
+        res = conn.getresponse()
+        data = res.read()
 
-    if res.status == 200:
-        with open(file_path, "wb") as file:
-            file.write(data)
-        print(f"音频已保存在 '{file_path}'")
-    else:
-        print("请求未成功，未能保存音频")
+        if res.status == 200:
+            with open(file_path, "wb") as file:
+                file.write(data)
+            print(f"音频已保存在 '{file_path}'")
+        else:
+            print(f"请求失败，HTTP状态码: {res.status}")
+            if res.status in [401, 403]:
+                print("错误：无效的API-KEY。请检查您的API-KEY是否正确。")
+            elif res.status == 404:
+                print("错误：无效的API-BASE。请检查您的API-BASE是否正确。")
+
+    except Exception as e:
+        print(f"发生错误：{e}")
+        print("请检查您的API-BASE格式是否正确。")
 
 def main():
-    text = input("请输入你要转换的文字: ")
+    text = input("请输入你要转换的文字 (最多 4096 字符): ")
+    if len(text) > 4096:
+        print("错误：文字长度超过 4096 字符限制。")
+        return
 
     questions = [
         inquirer.List('model',

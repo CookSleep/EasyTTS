@@ -1,3 +1,4 @@
 {
-    "api_key": "你的API密钥"
+    "api_key": "你的API密钥",
+    "api_base": "你的API基地址"
 }
