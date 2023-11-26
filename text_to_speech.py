@@ -54,7 +54,7 @@ def tts_request(text, model, voice, filename, format):
         print("请检查您的API-BASE格式是否正确。")
 
 def main():
-    text = input("请输入你要转换的文字 (最多 4096 字符): ")
+    text = input("请输入你要转换的文字 (最多 4096 字符，建议粘贴文字以避免可能存在的无法输入中文的问题): ")
     if len(text) > 4096:
         print("错误：文字长度超过 4096 字符限制。")
         return
