@@ -5,8 +5,8 @@ EasyTTS是一个便捷的工具，旨在方便地使用第三方API服务来调�
 您在使用这个工具前应当获取一个可调用OpenAI TTS的API-KEY。
 
 ## 已知的支持调用OpenAI TTS的API服务商（欢迎补充）
-[ChatAnywhere](https://github.com/chatanywhere/GPT_API_free) （仅付费Key支持调用OpenAI TTS，请选择“支持付费Key”以获取API-KEY）
-[Bltcy](https://one-api.bltcy.top/)
+1.[ChatAnywhere](https://github.com/chatanywhere/GPT_API_free) （仅付费Key支持调用OpenAI TTS，请选择“支持付费Key”以获取API-KEY）
+2.[Bltcy](https://one-api.bltcy.top/)
 
 ## 快速开始
 在开始使用前，请确保您的计算机上已安装Python。如果您尚未安装Python，可以前往 [Python官网](https://www.python.org/downloads) 进行下载安装。
