@@ -28,12 +28,13 @@ EasyTTS允许用户输入文本，并选择不同的模型、音色、格式来�
 
 ## 音色
 想了解各个音色，请访问 [Text to Speech - OpenAI API](https://platform.openai.com/docs/guides/text-to-speech)。
-注意，同一音色在不同语言下可能有所差异，请以实际效果为准。您也可以在各大视频网站上寻找有关ChatGPT语音对话功能的视频，OpenAI的ChatGPT APP内的语音对话功能使用的就是OpenAI TTS。
+注意，同一音色在不同语言下可能有所差异，请以实际效果为准。  
+您也可以在各大视频网站上寻找有关ChatGPT语音对话功能的视频，OpenAI的ChatGPT APP内的语音对话功能使用的就是OpenAI TTS。
 
 ## 正在尝试添加的功能
-WebUI
-音色展示（双语）
-API消费、余额查询
+WebUI  
+音色展示（双语）  
+API消费、余额查询  
 
 ## 贡献
 欢迎对项目进行贡献！如果您有任何建议或想要添加新功能，请随时创建一个Issue或Pull Request。
