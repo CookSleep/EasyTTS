@@ -1,12 +1,13 @@
 # EasyTTS
 
 ## 简介
-EasyTTS是一个便捷的工具，旨在方便地使用第三方API服务来调用OpenAI的文本转语音（TTS）功能。EasyTTS允许用户输入文本，并选择不同的模型、音色、格式来生成音频文件。该项目的代码几乎完全由GPT-4编写，我仅提供需求和建议。
+EasyTTS是一个便捷的工具，旨在方便地使用第三方API服务来调用OpenAI的文本转语音（TTS）功能。  
+EasyTTS允许用户输入文本，并选择不同的模型、音色、格式来生成音频文件。该项目的代码几乎完全由GPT-4编写，我仅提供需求和建议。  
 您在使用这个工具前应当获取一个可调用OpenAI TTS的API-KEY。
 
 ## 已知的支持调用OpenAI TTS的API服务商（欢迎补充）
-1.[ChatAnywhere](https://github.com/chatanywhere/GPT_API_free) （仅付费Key支持调用OpenAI TTS，请选择“支持付费Key”以获取API-KEY）
-2.[Bltcy](https://one-api.bltcy.top/)
+[ChatAnywhere](https://github.com/chatanywhere/GPT_API_free) （仅付费Key支持调用OpenAI TTS，请选择“支持付费Key”以获取API-KEY）  
+[Bltcy](https://one-api.bltcy.top/)
 
 ## 快速开始
 在开始使用前，请确保您的计算机上已安装Python。如果您尚未安装Python，可以前往 [Python官网](https://www.python.org/downloads) 进行下载安装。
@@ -26,7 +27,8 @@ EasyTTS是一个便捷的工具，旨在方便地使用第三方API服务来调�
 - 确保您的API密钥和API基地址是正确无误且可用的，如果在运行主程序获取音频文件时请求未成功，请联系您选择的API服务商获取支持。
 
 ## 音色
-想了解各个音色，请访问 [Text to Speech - OpenAI API](https://platform.openai.com/docs/guides/text-to-speech)。注意，同一音色在不同语言下可能有所差异，请以实际效果为准。您也可以在各大视频网站上寻找有关ChatGPT语音对话功能的视频，OpenAI的ChatGPT APP内的语音对话功能使用的就是OpenAI TTS。
+想了解各个音色，请访问 [Text to Speech - OpenAI API](https://platform.openai.com/docs/guides/text-to-speech)。
+注意，同一音色在不同语言下可能有所差异，请以实际效果为准。您也可以在各大视频网站上寻找有关ChatGPT语音对话功能的视频，OpenAI的ChatGPT APP内的语音对话功能使用的就是OpenAI TTS。
 
 ## 正在尝试添加的功能
 WebUI
